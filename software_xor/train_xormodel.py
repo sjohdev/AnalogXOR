@@ -21,14 +21,14 @@ if __name__ == '__main__':
     batch_size = len(y)
 
     # get model:
-    model = xm.xorModel().to(device)
+    model = xm.xorModel_tanh().to(device)
 
     # train model
     loss_fcn = nn.CrossEntropyLoss()
     optimizer = optim.SGD(model.parameters(), lr=1)
 
     model.train()
-    maxiter = 1000
+    maxiter = 500
     for epoch in range(0, maxiter):
         # forward + backward + optimize
         outputs = model(X)

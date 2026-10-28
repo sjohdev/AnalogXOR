@@ -16,8 +16,8 @@ if __name__ == '__main__':
 
     # get model:
     device = "cpu"
-    model = xm.xorModel().to(device)
-    model.load_state_dict(torch.load('xormodel2.pth', weights_only=True))
+    model = xm.xorModel_tanh().to(device)
+    model.load_state_dict(torch.load('xormodel3_tanh.pth', weights_only=True))
 
     # Compare model classifications against labels
     pred_labels = xorh.test_model(model, X_test, y_test)
